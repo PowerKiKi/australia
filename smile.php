@@ -87,5 +87,5 @@ $smileURL = [
  [cool.gif] 8-) 8)            [chat.gif] :chat:             [bunny.gif] :lapin:
  [star.gif] :star:            [alien.gif] :alien:
                      __________________:w
-    :wq                 
-*/;
+    :wq
+*/

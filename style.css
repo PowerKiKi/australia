@@ -131,7 +131,7 @@ body
    border-bottom: 0px solid;
    margin-top: 10px;
    font-family: verdana, arial;
-   
+
    text-align: left;
    text-decoration: none;
    padding: 0px;
@@ -205,13 +205,10 @@ td.nickname
 {
     font-weight: bold;
     }
-    
+
 table.main
 {
   border-bottom: 0px solid grey;
-}
-
-nt-weight: bold;
 }
 
 table.main

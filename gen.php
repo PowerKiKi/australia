@@ -1,7 +1,7 @@
 <?php
 
-$min = 0;
-$max = 350;
+$min = 1;
+$max = 120;
 for ($i = $min; $i < $max; ++$i) {
     $s = '';
     if ($i < 100) {
@@ -12,6 +12,5 @@ for ($i = $min; $i < $max; ++$i) {
     }
     echo '<img src="img.php?num=' . $s . $i . '&size=small">';
     echo '<img src="img.php?num=' . $s . $i . '&size=med">';
-//   echo "http://www.lucki.ch/img.php?num=" . $i . "&size=small";
-   echo '<br />';
+    echo '<br />';
 }
