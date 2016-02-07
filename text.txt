@@ -5,7 +5,7 @@
 004 -- This week, i met new friends
 005 -- I'm finishing my sandcastle
 006 -- I'm proud to present you my best friend
-     	
+
 007 -- Every week, i meet new friends
 008 -- Watch out !
 009 -- So cute and so tasty ;-)
@@ -41,7 +41,7 @@
 
 031 -- Darling Harbour seen from my room
 032 -- George Street by night from my bed
-033 -- Hobbit's feet or HurukaÔ's ears ? Make your choice
+033 -- Hobbit's feet or Huruka√Ø's ears ? Make your choice
 
 
 034 -- In front of my house...
@@ -70,7 +70,7 @@
 
 052 -- Geek a day, geek forever
 053 -- When i saw this magazine, i really couldn't resist
-054 -- I'm sorry, but: rh‚‚‚‚‚ !
+054 -- I'm sorry, but: rh√¢√¢√¢√¢√¢ !
 
 
 055 -- 21st Century
