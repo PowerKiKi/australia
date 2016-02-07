@@ -33,8 +33,8 @@
         // Faisage d'un joli tableau a partir du fichier texte [numero => texte]
         $text = preg_replace("/\n\s*/i", "\n", trim(implode(file('text.txt'), "\n")));
         $array = [];
-        foreach (preg_explode("/\n/D", $text) as $line) {
-            $line_array = preg_explode('/ -- /D', $line);
+        foreach (preg_split("/\n/D", $text) as $line) {
+            $line_array = preg_split('/ -- /D', $line);
 
             // Si on rencontre une ligne avec seulment '--', on arrete le parsage de le machin
             if (trim($line_array[0]) == '--') {

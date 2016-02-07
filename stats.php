@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="style.css" type="text/css" />
     </head>
     <body>
-        <h1>Australia's chat</h1><br />don't forget me, <a href="index.php">look my pictures</a>
+        <h1>Australia's chat</h1><br />don't forget me, <a href="index.php">look at my pictures</a>
 
 
         <?php
