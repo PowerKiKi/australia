@@ -1,25 +1,25 @@
 <?php
 //include_once("debug.inc");
 //v($_FILES);
-if (isset($_POST["text"])){
-  $f = fopen("text.txt", "w");
-  fwrite($f, trim(stripcslashes($_POST["text"])));
-  fclose($f);
-  echo "text.txt writed !";
+if (isset($_POST['text'])) {
+    $f = fopen('text.txt', 'w');
+    fwrite($f, trim(stripcslashes($_POST['text'])));
+    fclose($f);
+    echo 'text.txt writed !';
 }
-if (isset($_POST["mails"])){
-//echo $_POST['mails'];
-$mails =  $_POST['mails'];
+if (isset($_POST['mails'])) {
+    //echo $_POST['mails'];
+$mails = $_POST['mails'];
 //sort($mails);
-  $f = fopen("mail.txt", "w");
-  fwrite($f, trim(stripcslashes($mails)));
-  fclose($f);
-  echo "mail.txt writed !";
+  $f = fopen('mail.txt', 'w');
+    fwrite($f, trim(stripcslashes($mails)));
+    fclose($f);
+    echo 'mail.txt writed !';
 }
 
-if (isset($_FILES["uploadimage"])) {
-  $res = move_uploaded_file ($_FILES["uploadimage"]["tmp_name"], "img/".$_FILES["uploadimage"]["name"]);
-  echo $_FILES["uploadimage"]["name"]." upload ". ($res?"ok":"<b>FAILED</b>");
+if (isset($_FILES['uploadimage'])) {
+    $res = move_uploaded_file($_FILES['uploadimage']['tmp_name'], 'img/' . $_FILES['uploadimage']['name']);
+    echo $_FILES['uploadimage']['name'] . ' upload ' . ($res?'ok':'<b>FAILED</b>');
 }
 ?>
 <html>
@@ -44,36 +44,37 @@ upload:<br />
 
 <form action="admin.php" method="post">
 text:<br />
-<textarea name="text" rows="8" cols="70"><?php echo join(file('text.txt'), '');?></textarea >
+<textarea name="text" rows="8" cols="70"><?php echo implode(file('text.txt'), '');?></textarea >
 <input type="submit" value="send" />
 </form>
 <br /><hr>
 <?php
-$mails = file("mail.txt");
-echo count($mails) . " mails:<br>";
-echo "<p>";
-foreach ($mails as $m)
-  echo $m ."; ";
-echo "</p>";
-
+$mails = file('mail.txt');
+echo count($mails) . ' mails:<br>';
+echo '<p>';
+foreach ($mails as $m) {
+    echo $m . '; ';
+}
+echo '</p>';
 
 ?>
 <form action="admin.php" method="post">
 text:<br />
-<textarea name="mails" rows="8" cols="70"><?php echo join($mails, '');?></textarea >
+<textarea name="mails" rows="8" cols="70"><?php echo implode($mails, '');?></textarea >
 <input type="submit" value="send" />
 </form>
 <br /><hr>
 
 <?php
-$d = dir("img/");
-$a = array();
+$d = dir('img/');
+$a = [];
 while (false !== ($entry = $d->read())) {
-$a[] = $entry;
+    $a[] = $entry;
 }
 sort($a);
-foreach ($a as $entry)
-   echo '<a href="img/'.$entry.'">'.$entry."</a><br />\n";
+foreach ($a as $entry) {
+    echo '<a href="img/' . $entry . '">' . $entry . "</a><br />\n";
+}
 
 ?>
 

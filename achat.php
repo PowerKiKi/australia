@@ -1,11 +1,11 @@
 <?php
 //include_once("debug.inc");
 //v($_FILES);
-if (isset($_POST["chat"])){
-  $f = fopen("chat.txt", "w");
-  fwrite($f, trim(stripcslashes($_POST["chat"])));
-  fclose($f);
-  echo "chat.txt writed !";
+if (isset($_POST['chat'])) {
+    $f = fopen('chat.txt', 'w');
+    fwrite($f, trim(stripcslashes($_POST['chat'])));
+    fclose($f);
+    echo 'chat.txt writed !';
 }
 
 ?>
@@ -22,7 +22,7 @@ if (isset($_POST["chat"])){
 
 <form action="achat.php" method="post">
 chat:<br />
-<textarea name="chat" rows="50" cols="120"><?php echo join(file('chat.txt'), '');?></textarea >
+<textarea name="chat" rows="50" cols="120"><?php echo implode(file('chat.txt'), '');?></textarea >
 <input type="submit" value="send" />
 </form>
 </body>

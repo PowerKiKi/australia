@@ -9,62 +9,70 @@
 
 
 <?php
-include('smile.php');
-$sep_message = "::@@::@@::";
-$sep_name = "::__::__::";
+include 'smile.php';
+$sep_message = '::@@::@@::';
+$sep_name = '::__::__::';
 $nbPerPage = 20;
 
-function print_pages($total) {
-  global $nbPerPage;
-  $res = '';
-  
-  if (!isset($_GET["page"]))
-    $_GET["page"] = ceil($total / $nbPerPage);
+function print_pages($total)
+{
+    global $nbPerPage;
+    $res = '';
 
-  $res .= 'pages: '.($_GET["page"] > 1?'<a href="chat.php?page='.($_GET["page"]-1).'"><<</a>':'<<');
-  for ($i = 1; $i <= ceil($total / $nbPerPage); $i++)
-    if ($i == $_GET["page"])
-      $res .= ' '.$i;
-    else
-      $res .= ' <a href="chat.php?page='.$i.'">'.$i.'</a>';
-      
-  $res .= ' '.($_GET["page"] < ceil($total / $nbPerPage)?'<a href="chat.php?page='.($_GET["page"]+1).'">>></a>':'>>');
-  return $res;
+    if (!isset($_GET['page'])) {
+        $_GET['page'] = ceil($total / $nbPerPage);
+    }
+
+    $res .= 'pages: ' . ($_GET['page'] > 1?'<a href="chat.php?page=' . ($_GET['page'] - 1) . '"><<</a>':'<<');
+    for ($i = 1; $i <= ceil($total / $nbPerPage); ++$i) {
+        if ($i == $_GET['page']) {
+            $res .= ' ' . $i;
+        } else {
+            $res .= ' <a href="chat.php?page=' . $i . '">' . $i . '</a>';
+        }
+    }
+
+    $res .= ' ' . ($_GET['page'] < ceil($total / $nbPerPage)?'<a href="chat.php?page=' . ($_GET['page'] + 1) . '">>></a>':'>>');
+
+    return $res;
 }
 
-if (file_exists("chat.txt")) {
-  $messages = split($sep_message, join(file("chat.txt"), ''));
-  
-  echo "<table width=\"90%\">";
-  echo '<tr><td colspan="3" style="background-color: white; text-align: center;">'.print_pages(count($messages)).'</td><tr>';
-  $i = 0;
-  $first = $nbPerPage * ($_GET["page"]-1);
-  $last = $nbPerPage * $_GET["page"] ;
+if (file_exists('chat.txt')) {
+    $messages = split($sep_message, implode(file('chat.txt'), ''));
 
-   $nicks = array();
-  foreach($messages as $line){
-    $array = split($sep_name, $line);
-    $nicks[$array[1]] =$array[1];
-  }
-  sort($nicks);
-  $newNicks = array();
-  foreach($nicks as $x => $n){
-    $newNicks[$x] = '<span class="nickname">'.$n.'</span>';
-  }
+    echo '<table width="90%">';
+    echo '<tr><td colspan="3" style="background-color: white; text-align: center;">' . print_pages(count($messages)) . '</td><tr>';
+    $i = 0;
+    $first = $nbPerPage * ($_GET['page'] - 1);
+    $last = $nbPerPage * $_GET['page'];
 
-  echo '<tr><td colspan="3" style="background-color: white; text-align: center;">'.print_pages(count($messages)).'</td><tr>';
-  echo "</table>";
-  foreach($nicks as $n)
-  echo $n . '<br />';
-  
+    $nicks = [];
+    foreach ($messages as $line) {
+        $array = split($sep_name, $line);
+        $nicks[$array[1]] = $array[1];
+    }
+    sort($nicks);
+    $newNicks = [];
+    foreach ($nicks as $x => $n) {
+        $newNicks[$x] = '<span class="nickname">' . $n . '</span>';
+    }
+
+    echo '<tr><td colspan="3" style="background-color: white; text-align: center;">' . print_pages(count($messages)) . '</td><tr>';
+    echo '</table>';
+    foreach ($nicks as $n) {
+        echo $n . '<br />';
+    }
 }
-
 
 ?>
-<br /><?php if (isset($_GET["error"])) echo "remplis tous les champs et arrete d'embeter mon site-euh !"; ?><br />
+<br /><?php if (isset($_GET['error'])) {
+    echo "remplis tous les champs et arrete d'embeter mon site-euh !";
+} ?><br />
 <form action="post.php" method="post">
 name:<br />
-<input type="text" name="name" <?php if  (isset($_COOKIE["name"])) echo ' value="'.$_COOKIE["name"].'"';?>/><br /><br />
+<input type="text" name="name" <?php if (isset($_COOKIE['name'])) {
+    echo ' value="' . $_COOKIE['name'] . '"';
+}?>/><br /><br />
 message:<br />
 <textarea name="message" rows="4" cols="70"></textarea >
 <input type="submit" value="send">
