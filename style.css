@@ -1,0 +1,221 @@
+/*
+Auteur : G.Burri
+Date   : 14.02.2004
+Description :
+Feuille de style du site AFA organisation.
+*/
+
+/* les liens */
+a:link
+{
+   color: #0000b0;
+   font-family: verdana, arial;
+   text-decoration: none;
+}
+a:visited
+{
+   color: #0000b0;
+   font-family: verdana, arial;
+   text-decoration: none;
+}
+a:hover
+{
+   color: #8989ff;
+   font-family: verdana, arial;
+   text-decoration: underline;
+}
+a:active
+{
+   color: #ffffff;
+   font-family: verdana, arial;
+   text-decoration: none;
+}
+
+/* formatage de texte */
+h1
+{
+   font-size: 15pt;
+   font-family: verdana;
+   margin-bottom: 5pt;
+}
+h2
+{
+   font-size: 13pt;
+   font-family: verdana;
+   margin-bottom: 5pt;
+}
+h3
+{
+   font-size: 10pt;
+   font-family: verdana;
+   margin-bottom: 3pt;
+}
+ul
+{
+   margin-top: 4px;
+   margin-bottom: 6px;
+}
+ul .admin
+{
+   margin-left: -20px
+}
+hr
+{
+   border-right: #ffcece 0px solid;
+   border-top: #ffcece 1px dotted;
+   border-left: #ffcece 0px solid;
+   border-bottom: #ffcece 0px solid;
+   color: white; /* spécial explorer suxxage */
+}
+
+/* les formulaires */
+form
+{
+   font-size: 7pt;
+   font-family: verdana;
+   background-color: transparent;
+   margin-top: 2px;
+   margin-bottom: 2px;
+}
+form select
+{
+   border-right: black 1px solid;
+   border-top: black 1px solid;
+   font-size: 7pt;
+   border-left: black 1px solid;
+   border-bottom: black 1px solid;
+   font-family: verdana;
+   background-color: #CFD1E9;
+}
+form input
+{
+   border-right: black 1px solid;
+   border-top: black 1px solid;
+   font-size: 7pt;
+   margin-bottom: 2px;
+   border-left: black 1px solid;
+   color: black;
+   border-bottom: black 1px solid;
+   font-family: verdana;
+   background-color: #CFD1E9;
+}
+form textarea
+{
+   border-right: black 1px solid;
+   border-top: black 1px solid;
+   font-size: 7pt;
+   border-left: black 1px solid;
+   color: black;
+   border-bottom: black 1px solid;
+   font-family: verdana;
+   background-color: #CFD1E9;
+}
+form button
+{
+   border-right: black 1px solid;
+   border-top: black 1px solid;
+   font-size: 7pt;
+   border-left: black 1px solid;
+   border-bottom: black 1px solid;
+   font-family: verdana;
+   background-color: #CFD1E9;
+}
+
+body
+{
+   border-right: 0px;
+   border-top: 0 px;
+   font-size: 8pt;
+   border-left: 0px black solid;
+   color: #7b0000;
+   border-bottom: 0px solid;
+   margin-top: 10px;
+   font-family: verdana, arial;
+   
+   text-align: left;
+   text-decoration: none;
+   padding: 0px;
+}
+/* cadre noir */
+.cadre
+{
+   border-right: black 1px solid;
+   border-top: black 1px solid;
+   border-left: black 1px solid;
+   border-bottom: black 1px solid
+}
+
+/* fond */
+.background
+{
+   background-color: #CFD1E9/*#c3c3c3*/
+}
+
+/* element transparent */
+.transparent
+{
+   background-color: transparent;
+}
+
+/* les images */
+img
+{
+   border-right: 0px;
+   border-left: 0px;
+   border-top: 0px;
+   border-bottom: black 0px;
+}
+img.contour
+{
+   border-right: black 1px solid;
+   border-left: black 1px solid;
+   border-top: black 1px solid;
+   border-bottom: black 1px solid;
+}
+
+/* les tableaux */
+table
+{
+   border-right: 0px;
+   border-top: 0 px;
+   font-size: 8pt;
+   border-left: 0px black solid;
+   color: #7b0000;
+   border-bottom: 0px solid;
+   margin-top: 10px;
+   font-family: verdana, arial;
+   background-color: #f7f7f7;
+   text-align: left;
+   text-decoration: none;
+   padding: 0px;
+}
+
+
+td.yopla
+{
+  border-bottom:solid 1px grey;
+}
+
+td.nickname
+{
+  border-bottom:solid 1px grey;
+  font-weight: bold;
+}
+.nickname
+{
+    font-weight: bold;
+    }
+    
+table.main
+{
+  border-bottom: 0px solid grey;
+}
+
+nt-weight: bold;
+}
+
+table.main
+{
+  border-bottom: 0px solid grey;
+}
+
